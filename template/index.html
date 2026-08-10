@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chat Bot</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: white;
+            width: 400px;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        hr {
+            width: 400px;
+            margin: 25px auto;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        p {
+            background-color: white;
+            width: 360px;
+            margin: 10px auto;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Chat Bot</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <div>
+            <label>Text</label><br>
+
+            <input type="text" name="question" required>
+
+            <button type="submit">Answer Me</button>
+        </div>
+
+    </form>
+
+    {% if answer %}
+    <hr>
+    <h3>Answer:</h3>
+    <p>{{ answer }}</p>
+    {% endif %}
+
+</body>
+
+</html>
