@@ -9,7 +9,7 @@ def chatbot(request):
 
         api_key = os.getenv("GEMINI_API_KEY", "your_fallback_key")
 
-        URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+        URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key={api_key}"
 
         user_input = request.POST.get("question")
 
